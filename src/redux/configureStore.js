@@ -1,12 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
-import missions from './missions/missionsSlice';
-import rockets from './rockets/rocketsSlice';
+import coins from './slices/coinsSlice';
 
 export default configureStore({
   reducer: {
-    missions,
-    rockets,
+    coins,
   },
   middleware: [thunk],
 });
