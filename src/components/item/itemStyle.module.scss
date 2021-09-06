@@ -1,0 +1,37 @@
+@use '../../utils/utils' as *;
+
+.mainContainer {
+  display: grid;
+  grid-template-rows: 0.2fr 2fr 1fr;
+  padding: 0 1em;
+
+  .icon {
+    width: 1rem;
+    height: 1rem;
+    color: white;
+    margin-left: auto;
+    margin-top: 0.5em;
+  }
+
+  h2 {
+    @include setFont(2rem, bold, normal);
+
+    margin: auto;
+    color: $mainColor4;
+  }
+
+  .dataContainer {
+    margin-left: auto;
+    color: white;
+
+    .name {
+      @include setFont(1.2rem, bold, normal);
+    }
+
+    .price {
+      @include setFont(1rem, normal, italic);
+
+      text-align: end;
+    }
+  }
+}
