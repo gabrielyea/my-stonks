@@ -1,9 +1,6 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { fetchAllMissions } from '../../redux/slice/componentSlice';
 import styles from './loaderStyle.module.scss';
 
 const container = {
