@@ -25,17 +25,12 @@ const Navbar = () => {
     {
       id: 1,
       path: '/',
-      text: 'Rockets',
+      text: 'Home',
     },
     {
       id: 2,
-      path: '/missions',
-      text: 'Missions',
-    },
-    {
-      id: 3,
-      path: '/my-profile',
-      text: 'My Profile',
+      path: '/detail',
+      text: 'Detail',
     },
   ];
 
