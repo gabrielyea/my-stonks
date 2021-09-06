@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const fetchAllCoins = createAsyncThunk('missions/fetchAllCoins', async () => {
-  const response = await axios.get('https://api.coincap.io/v2/assets/?limit=6');
+  const response = await axios.get('https://api.coincap.io/v2/assets/?limit=10');
   return response.data.data;
 });
 
