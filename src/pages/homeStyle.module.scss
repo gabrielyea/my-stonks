@@ -18,6 +18,19 @@ header {
   }
 }
 
+.doggoContainer {
+  display: flex;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+
+  h1 {
+    font-size: 1rem;
+  }
+}
+
 .sectionTitle {
   @include setFont(1rem, bold);
 

@@ -1,0 +1,9 @@
+@use '../../utils/utils' as *;
+
+.dialog {
+  p {
+    border: $mainColor4 solid 2px;
+    border-radius: 16px;
+    padding: 1em;
+  }
+}

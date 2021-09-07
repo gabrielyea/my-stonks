@@ -1,8 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useSelector } from 'react-redux';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './itemsGalleryStyle.module.scss';
 import Item from '../item/Item';
@@ -20,15 +18,10 @@ const container = {
   },
 };
 
-const ItemsGallery = () => {
+const ItemsGallery = ({ displayNum }) => {
   const allItems = useSelector((state) => state.coins.entities);
-  const [selected, setSelected] = useState(null);
 
-  const handleClick = (id) => {
-    setSelected(id);
-  };
-
-  const createItems = () => allItems.map((item) => (
+  const createItems = () => allItems.slice(displayNum - 10, displayNum).map((item) => (
     <Item
       key={item.id}
       data={item}
@@ -45,7 +38,7 @@ const ItemsGallery = () => {
             animate="animate"
             className={styles.mainContainer}
           >
-            { createItems(allItems) }
+            { createItems(allItems.slice(0, 10)) }
           </motion.ul>
         )}
     </div>
