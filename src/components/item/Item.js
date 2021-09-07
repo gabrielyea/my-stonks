@@ -6,12 +6,27 @@ import styles from './itemStyle.module.scss';
 
 const variants = {
   initial: {
+    y: 50,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+  },
+};
+
+const child = {
+  initial: {
     x: 50,
     opacity: 0,
   },
   animate: {
     x: 0,
     opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.2,
+    },
   },
 };
 
@@ -32,10 +47,15 @@ const Item = (props) => {
         <BiRightArrowCircle className={styles.icon} />
       </Link>
       <h2>{data.symbol}</h2>
-      <div className={styles.dataContainer}>
-        <p className={styles.name}>{data.name}</p>
-        <p className={styles.price}>{truncate(data.priceUsd)}</p>
-      </div>
+      <motion.div
+        className={styles.dataContainer}
+        variants={child}
+        initial="initial"
+        animate="animate"
+      >
+        <motion.p variants={child} className={styles.name}>{data.name}</motion.p>
+        <motion.p variants={child}>{truncate(data.priceUsd)}</motion.p>
+      </motion.div>
     </motion.li>
   );
 };
