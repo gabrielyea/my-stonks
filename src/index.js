@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import store from './redux/configureStore';
 import './utils/_resets.scss';
+import './main.scss';
 
 ReactDOM.render(
   <React.StrictMode>
