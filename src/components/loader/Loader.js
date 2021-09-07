@@ -50,7 +50,9 @@ const Loader = ({
 }) => {
   const state = useSelector((state) => state.coins.status);
   useEffect(() => {
-    callDispatch();
+    if (list.length === 0) {
+      callDispatch();
+    }
   }, []);
 
   return (
@@ -69,7 +71,7 @@ const Loader = ({
             <motion.div>
               {state === 'normal' ? (
                 <p>LOADING</p>) : (
-                  <p>ERROR: TOO MANY REQUEST</p>)}
+                  <p>ERROR: TOO MANY REQUESTS</p>)}
 
             </motion.div>
             <motion.div
@@ -84,9 +86,6 @@ const Loader = ({
         ) : (
           <motion.div
             key="component"
-            variants={container}
-            initial="hidden"
-            animate="show"
           >
             {children}
           </motion.div>
