@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
@@ -10,6 +9,13 @@ const container = {
     opacity: 0,
   },
   animate: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+  exit: {
     opacity: 1,
     transition: {
       staggerChildren: 0.1,
@@ -36,6 +42,7 @@ const ItemsGallery = ({ displayNum }) => {
             variants={container}
             initial="initial"
             animate="animate"
+            exit="exit"
             className={styles.mainContainer}
           >
             { createItems(allItems.slice(0, 10)) }
