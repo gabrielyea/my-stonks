@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useDispatch, useSelector } from 'react-redux';
 import {
   AnimatePresence, AnimateSharedLayout, motion, useCycle,
@@ -15,9 +14,11 @@ import Dialog from '../components/dialog/Dialog';
 const container = {
   initial: {
     opacity: 0,
+    y: 100,
   },
   animate: {
     opacity: 1,
+    y: 0,
   },
   exit: {
     opacity: 0,

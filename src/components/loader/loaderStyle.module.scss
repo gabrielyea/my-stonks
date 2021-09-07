@@ -1,10 +1,14 @@
+@use '../../utils/utils' as *;
+
 .mainContainer {
-  position: fixed;
+  @include setFont();
+
+  position: absolute;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
-  color: black;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;

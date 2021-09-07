@@ -50,10 +50,10 @@ const Dialog = ({ index, message }) => {
       exit="exit"
       layout
     >
-      {state === 'normal' ? (
-        <p>{message}</p>
+      {state === 'error' ? (
+        <p>You should try reloading...</p>
       ) : (
-        <p>You should try reloading...</p>)}
+        <p>{message}</p>)}
     </motion.div>
   );
 };

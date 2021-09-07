@@ -15,10 +15,12 @@ export const coinsSlice = createSlice({
     builder
       .addCase(fetchAllCoins.pending, (state) => {
         state.loading = 'pending';
+        state.status = 'normal';
       })
       .addCase(fetchAllCoins.fulfilled, (state, action) => {
         state.entities = [...action.payload];
         state.loading = 'idle';
+        state.status = 'normal';
       })
       .addCase(fetchAllCoins.rejected, (state) => {
         state.status = 'error';
