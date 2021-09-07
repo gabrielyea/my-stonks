@@ -8,6 +8,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/navbar/Navbar';
 import Home from './pages/Home';
 import Detail from './pages/Detail';
@@ -28,15 +29,17 @@ function App() {
   ));
 
   return (
-    <Router>
-      <Navbar />
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        {allRoutes()}
-      </Switch>
-    </Router>
+    <AnimatePresence exitBeforeEnter initial="false">
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          {allRoutes()}
+        </Switch>
+      </Router>
+    </AnimatePresence>
   );
 }
 
