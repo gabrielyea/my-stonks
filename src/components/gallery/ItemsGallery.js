@@ -3,8 +3,22 @@
 import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import styles from './itemsGalleryStyle.module.scss';
 import Item from '../item/Item';
+
+const container = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+};
 
 const ItemsGallery = () => {
   const allItems = useSelector((state) => state.coins.entities);
@@ -18,7 +32,6 @@ const ItemsGallery = () => {
     <Item
       key={item.id}
       data={item}
-      // click={handleClick}
     />
   ));
 
@@ -26,11 +39,14 @@ const ItemsGallery = () => {
     <div>
       {allItems
         && (
-          <ul
+          <motion.ul
+            variants={container}
+            initial="initial"
+            animate="animate"
             className={styles.mainContainer}
           >
             { createItems(allItems) }
-          </ul>
+          </motion.ul>
         )}
     </div>
   );
