@@ -17,5 +17,12 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 1em;
+    padding: 0 1em;
+  }
+
+  .icon {
+    color: white;
+    display: flex;
   }
 }

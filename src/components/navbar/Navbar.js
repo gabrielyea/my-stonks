@@ -36,25 +36,14 @@ const Navbar = () => {
     },
   ];
 
-  const linksList = links.map((link) => (
-    <li key={link.id}>
-      <NavLink
-        className={style.link}
-        to={link.path}
-        activeClassName={style.active}
-        exact
-      >
-        {link.text}
-      </NavLink>
-    </li>
-  ));
-
   return (
     <nav className={style.mainContainer}>
       <div
         className={style.contentHolder}
       >
-        <IoIosArrowBack />
+        <NavLink to={links[0].path}>
+          <IoIosArrowBack className={style.icon} />
+        </NavLink>
         <p>2021</p>
       </div>
 
