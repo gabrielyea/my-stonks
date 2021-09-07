@@ -3,7 +3,6 @@
 .mainContainer {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  padding: 0 1em;
 
   .link {
     display: flex;
@@ -12,14 +11,15 @@
   }
 
   .icon {
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
     color: white;
     margin-top: 0.5em;
+    margin-right: 1em;
   }
 
   h2 {
-    @include setFont(2rem, bold, normal);
+    @include setFont(1.5rem, bold, normal);
 
     margin: auto;
     color: $mainColor4;
@@ -28,16 +28,16 @@
   }
 
   .dataContainer {
-    margin-left: auto;
+    margin: auto;
     color: white;
     grid-column: 3;
 
     .name {
-      @include setFont(1.2rem, bold, normal);
+      @include setFont(1rem, bold, normal);
     }
 
     .price {
-      @include setFont(1rem, normal, italic);
+      @include setFont(0.8rem, normal, italic);
 
       text-align: end;
     }
