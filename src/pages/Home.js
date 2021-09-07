@@ -1,16 +1,18 @@
 /* eslint-disable no-unused-vars */
 import { useDispatch, useSelector } from 'react-redux';
 import { BiBitcoin } from 'react-icons/bi';
+import { useState } from 'react';
 import { fetchAllCoins } from '../redux/slices/coinsSlice';
 import Loader from '../components/loader/Loader';
-import ItemsGallery from '../components/gallery/ItemsGallery';
 import { ReactComponent as Logo } from './doge.svg';
 import styles from './homeStyle.module.scss';
+import ItemsGallery from '../components/gallery/ItemsGallery';
 
 const Home = () => {
   const loading = useSelector((state) => state.coins.loading);
   const list = useSelector((state) => state.coins.entities);
   const dispatch = useDispatch();
+  const [selected, setSelected] = useState(null);
 
   const callDispatch = () => {
     dispatch(fetchAllCoins());
