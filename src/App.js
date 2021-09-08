@@ -19,7 +19,7 @@ function App() {
   const allItems = useSelector((state) => state.coins.entities);
 
   const allRoutes = () => allItems.map((coin) => (
-    <Route key={coin.id} path={`/${coin.id}`}>
+    <Route key={coin.id} path={`/detail/${coin.id}`}>
       <Detail key={coin.id} name={coin.name} data={coin} />
     </Route>
   ));
