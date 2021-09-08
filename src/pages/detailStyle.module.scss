@@ -2,6 +2,11 @@
 
 .mainContainer {
   header {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 16rem;
+
     h2 {
       font-size: 4rem;
       color: $mainColor4;
@@ -12,9 +17,12 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: flex-end;
       padding-right: 1rem;
 
       h3 {
+        justify-content: end;
+        align-items: flex-end;
         font-size: 2rem;
       }
     }
