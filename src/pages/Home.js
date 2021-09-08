@@ -26,8 +26,7 @@ const container = {
 };
 
 const Home = () => {
-  const loading = useSelector((state) => state.coins.loading);
-  const list = useSelector((state) => state.coins.entities);
+  const { loading, entities: list, status } = useSelector((state) => state.coins);
   const dispatch = useDispatch();
   const [open, toggleOpen] = useCycle(false, true);
   const [filter, setFilter] = useState(10);
@@ -100,6 +99,8 @@ const Home = () => {
         loading={loading}
         callDispatch={callDispatch}
         list={list}
+        status={status}
+        position="50%"
       >
         <ItemsGallery
           displayNum={filter}

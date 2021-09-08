@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { motion } from 'framer-motion';
 import React from 'react';
+import Chart from '../components/chart/Chart';
 import styles from './detailStyle.module.scss';
 
 const truncate = (str) => (str !== null ? str.substring(0, 15) : 'None');
@@ -60,7 +61,7 @@ const Detail = ({ data }) => {
 
   return (
     <motion.div
-      key={data.key}
+      key={data.id}
       className={styles.mainContainer}
       variants={container}
       initial="initial"
@@ -72,7 +73,8 @@ const Detail = ({ data }) => {
         initial="initial"
         animate="animate"
       >
-        <motion.h2 variants={child1}>{data.symbol}</motion.h2>
+        <Chart id={data.id} />
+
         <motion.div variants={child2} initial="initial" animate="animate" className={styles.textContent}>
           <motion.h3 variants={child2}>{data.name}</motion.h3>
           <motion.p variants={child2}>

@@ -2,30 +2,30 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const fetchAllCoins = createAsyncThunk('coins/fetchAllCoins', async () => {
-  const response = await axios.get('https://api.coincap.io/v2/assets/?limit=100');
+export const fetchHistory = createAsyncThunk('history/fetchHistory', async (coin) => {
+  const response = await axios.get(`https://api.coincap.io/v2/assets/${coin}/history?interval=d1`);
   return response.data.data;
 });
 
-export const coinsSlice = createSlice({
-  name: 'coins',
+export const historySlice = createSlice({
+  name: 'history',
   initialState: { entities: [], loading: 'idle', status: 'normal' },
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchAllCoins.pending, (state) => {
+      .addCase(fetchHistory.pending, (state) => {
         state.loading = 'pending';
         state.status = 'normal';
       })
-      .addCase(fetchAllCoins.fulfilled, (state, action) => {
+      .addCase(fetchHistory.fulfilled, (state, action) => {
         state.entities = [...action.payload];
         state.loading = 'idle';
         state.status = 'normal';
       })
-      .addCase(fetchAllCoins.rejected, (state) => {
+      .addCase(fetchHistory.rejected, (state) => {
         state.status = 'error';
       });
   },
 });
 
-export default coinsSlice.reducer;
+export default historySlice.reducer;
