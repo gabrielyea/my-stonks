@@ -42,7 +42,7 @@ const Item = (props) => {
     >
       <Link
         className={styles.link}
-        to={data.id}
+        to={`/detail/${data.id}`}
       >
         <BiRightArrowCircle className={styles.icon} />
       </Link>
