@@ -1,7 +1,7 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useSelector } from 'react-redux';
 import styles from './loaderStyle.module.scss';
 import { ReactComponent as Logo } from '../../pages/doge.svg';
 
@@ -23,11 +23,6 @@ const container = {
       ease: [0.83, 0, 0.17, 1],
     },
   },
-  loading: {
-    flip: Infinity,
-    duration: 1,
-    ease: 'easeInOut',
-  },
 };
 
 const ballVariants = {
@@ -37,7 +32,7 @@ const ballVariants = {
     x: 75,
     transition: {
       flip: Infinity,
-      duration: 2,
+      duration: 1,
       ease: 'easeInOut',
     },
   },
@@ -45,12 +40,12 @@ const ballVariants = {
     x: -75,
   },
 };
+
 const Loader = ({
-  children, loading, callDispatch, list,
+  children, loading, callDispatch, list, reload = false, status, position = '25%',
 }) => {
-  const state = useSelector((state) => state.coins.status);
   useEffect(() => {
-    if (list.length === 0) {
+    if (list.length === 0 || reload) {
       callDispatch();
     }
   }, []);
@@ -58,7 +53,7 @@ const Loader = ({
   return (
     <>
       <AnimatePresence>
-        {loading === 'pending' && list.length === 0 ? (
+        {loading === 'pending' ? (
           <motion.div
             key="loader"
             className={styles.mainContainer}
@@ -66,10 +61,11 @@ const Loader = ({
             initial="loading"
             animate="loading"
             exit="hidden"
+            style={{ top: position }}
           >
             {}
             <motion.div>
-              {state === 'normal' ? (
+              {status === 'normal' ? (
                 <p>LOADING</p>) : (
                   <p>ERROR: TOO MANY REQUESTS</p>)}
 
