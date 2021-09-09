@@ -1,14 +1,13 @@
-/* eslint-disable no-unused-vars */
-import React, { useCallback, useState } from 'react';
 import { HiCog, HiMicrophone } from 'react-icons/hi';
 import { IoIosArrowBack } from 'react-icons/io';
 import { NavLink } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import style from './navbarStyle.module.scss';
-import themes from '../../utils/themes';
-import useThemify from '../customHooks/useThemify';
+import useToggle from '../customHooks/useToggle';
+import MenuOptions from '../options/MenuOptions';
 
 const Navbar = () => {
-  const [setTheme] = useThemify(themes);
+  const [open, toggleOpen] = useToggle(false, true);
   const links = [
     {
       id: 1,
@@ -21,10 +20,6 @@ const Navbar = () => {
       text: 'Detail',
     },
   ];
-
-  const test = () => {
-    setTheme('blue');
-  };
 
   return (
     <nav className={style.mainContainer}>
@@ -42,7 +37,12 @@ const Navbar = () => {
         className={style.contentHolder}
       >
         <HiMicrophone />
-        <HiCog onClick={() => test()} />
+        <HiCog onClick={() => toggleOpen()} />
+        <AnimatePresence>
+          {open && (
+            <MenuOptions toggleMenu={toggleOpen} />
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );
