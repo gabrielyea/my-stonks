@@ -1,14 +1,16 @@
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
-const useThemify = (collection) => {
+const useThemify = (name, collection) => {
   const themes = collection;
+  const [theme, setTheme] = useState(name);
 
   const applyTheme = useCallback((themeName) => {
+    setTheme(themeName);
     Object.keys(themes[themeName]).forEach((att) => {
       document.documentElement.style.setProperty(`--${att}`, themes[themeName][att]);
     });
-  });
-  return [applyTheme];
+  }, []);
+  return [theme, applyTheme];
 };
 
 export default useThemify;
