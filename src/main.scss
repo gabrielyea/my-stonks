@@ -1,3 +1,12 @@
+:root {
+  --mainColor1: #f94e90;
+  --mainColor2: #ec4c8a;
+  --mainColor3: #ce4176;
+  --mainColor4: #992e58;
+  --mainText: white;
+  --darkText: #992e58;
+}
+
 body {
-  background-color: #992e58;
+  background-color: var(--mainColor4);
 }
