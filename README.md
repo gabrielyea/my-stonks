@@ -18,6 +18,9 @@ You can see my page live here:
 ![img](./misc/themeChange.gif)
 
 
+## Video
+I made this little [video](https://www.loom.com/share/76d2ddacb3cc411f833f28b8c0503ffc) explaining some features of my app
+
 ## Built With 🔨
 - SCSS
 - javaScript
