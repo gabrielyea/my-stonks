@@ -1,10 +1,14 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useCallback, useState } from 'react';
 import { HiCog, HiMicrophone } from 'react-icons/hi';
 import { IoIosArrowBack } from 'react-icons/io';
 import { NavLink } from 'react-router-dom';
 import style from './navbarStyle.module.scss';
+import themes from '../../utils/themes';
+import useThemify from '../customHooks/useThemify';
 
 const Navbar = () => {
+  const [setTheme] = useThemify(themes);
   const links = [
     {
       id: 1,
@@ -17,6 +21,10 @@ const Navbar = () => {
       text: 'Detail',
     },
   ];
+
+  const test = () => {
+    setTheme('blue');
+  };
 
   return (
     <nav className={style.mainContainer}>
@@ -34,7 +42,7 @@ const Navbar = () => {
         className={style.contentHolder}
       >
         <HiMicrophone />
-        <HiCog />
+        <HiCog onClick={() => test()} />
       </div>
     </nav>
   );
