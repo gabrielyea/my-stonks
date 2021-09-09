@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
-import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
 import styles from './itemsGalleryStyle.module.scss';
-import Item from '../item/Item';
+import Filter from '../filter/Filter';
 
 const container = {
   initial: {
@@ -24,32 +23,22 @@ const container = {
   },
 };
 
-const ItemsGallery = ({ displayNum }) => {
-  const allItems = useSelector((state) => state.coins.entities);
-
-  const createItems = () => allItems.slice(displayNum - 10, displayNum).map((item) => (
-    <Item
-      key={item.id}
-      data={item}
-    />
-  ));
-
-  return (
-    <div>
-      {allItems
+const ItemsGallery = ({ list, displayNum }) => (
+  <div title="gallery">
+    {list
         && (
           <motion.ul
+            data-testid="gallery"
             variants={container}
             initial="initial"
             animate="animate"
             exit="exit"
             className={styles.mainContainer}
           >
-            { createItems(allItems.slice(0, 10)) }
+            <Filter list={list} filterValue={displayNum} />
           </motion.ul>
         )}
-    </div>
-  );
-};
+  </div>
+);
 
 export default ItemsGallery;
