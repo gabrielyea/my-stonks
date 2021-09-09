@@ -10,10 +10,10 @@
   grid-template-columns: 1fr 1fr;
 
   li:nth-child(odd) {
-    background-color: $mainColor2;
+    background-color: var(--mainColor2);
   }
 
   li:nth-child(even) {
-    background-color: $mainColor3;
+    background-color: var(--mainColor3);
   }
 }

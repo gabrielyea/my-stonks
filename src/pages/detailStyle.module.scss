@@ -34,28 +34,28 @@
     display: flex;
     flex-direction: row;
     padding: 0 1em;
-    background-color: $mainColor2;
+    background-color: var(--mainColor2);
 
     p {
-      color: white;
+      color: var(--mainText);
     }
   }
 }
 
 ul {
   li:nth-child(odd) {
-    background-color: $mainColor2;
+    background-color: var(--mainColor2);
   }
 
   li:nth-child(even) {
-    background-color: $mainColor3;
+    background-color: var(--mainColor3);
   }
 }
 
 .dataSet {
   @include setFont();
 
-  color: white;
+  color: var(--mainText);
   display: grid;
   grid-template-columns: 5fr 4fr 1fr;
   height: 5rem;

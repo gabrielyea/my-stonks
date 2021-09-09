@@ -1,10 +1,13 @@
-import React from 'react';
 import { HiCog, HiMicrophone } from 'react-icons/hi';
 import { IoIosArrowBack } from 'react-icons/io';
 import { NavLink } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 import style from './navbarStyle.module.scss';
+import useToggle from '../customHooks/useToggle';
+import MenuOptions from '../options/MenuOptions';
 
 const Navbar = () => {
+  const [open, toggleOpen] = useToggle(false, true);
   const links = [
     {
       id: 1,
@@ -34,7 +37,16 @@ const Navbar = () => {
         className={style.contentHolder}
       >
         <HiMicrophone />
-        <HiCog />
+        <motion.div
+          whileTap={{ rotateZ: 360 }}
+        >
+          <HiCog onClick={() => toggleOpen()} />
+        </motion.div>
+        <AnimatePresence>
+          {open && (
+            <MenuOptions toggleMenu={toggleOpen} />
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

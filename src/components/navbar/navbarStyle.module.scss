@@ -3,8 +3,8 @@
 .mainContainer {
   @include setFont();
 
-  color: white;
-  background-color: $mainColor2;
+  color: var(--mainText);
+  background-color: var(--mainColor2);
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -22,7 +22,7 @@
   }
 
   .icon {
-    color: white;
+    color: var(--mainText);
     display: flex;
   }
 }

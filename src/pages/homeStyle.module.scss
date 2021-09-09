@@ -3,18 +3,18 @@
 header {
   @include setFont();
 
-  color: white;
+  color: var(--mainText);
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-content: center;
   justify-items: center;
-  background-color: $mainColor1;
+  background-color: var(--mainColor1);
   height: 12rem;
 
   .icon {
     width: 8em;
     height: 8em;
-    fill: $mainColor4;
+    fill: var(--darkText);
   }
 }
 
@@ -37,9 +37,9 @@ header {
   display: flex;
   flex-direction: row;
   padding: 0 1em;
-  background-color: $mainColor2;
+  background-color: var(--mainColor2);
 
   p {
-    color: white;
+    color: var(--mainText);
   }
 }
