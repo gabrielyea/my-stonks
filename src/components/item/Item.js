@@ -30,9 +30,7 @@ const child = {
   },
 };
 
-const Item = (props) => {
-  const { data } = props;
-
+const Item = ({ data }) => {
   const truncate = (str) => str.substring(0, 5);
 
   return (

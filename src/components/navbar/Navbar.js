@@ -1,26 +1,8 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { HiCog, HiMicrophone } from 'react-icons/hi';
 import { IoIosArrowBack } from 'react-icons/io';
-import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import style from './navbarStyle.module.scss';
-
-const variants = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-    rotate: 360,
-    transition: {
-      type: 'spring',
-      damping: 10,
-      mass: 0.75,
-      stiffness: 100,
-    },
-  },
-};
 
 const Navbar = () => {
   const links = [

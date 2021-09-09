@@ -104,6 +104,7 @@ const Home = () => {
       >
         <ItemsGallery
           displayNum={filter}
+          list={list}
         />
       </Loader>
     </motion.div>
