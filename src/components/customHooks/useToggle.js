@@ -4,12 +4,9 @@ const useToggle = (first, second) => {
   const values = [first, second];
   const [value, setValue] = useState(0);
   const setToggle = useCallback(() => {
-    let temp = value;
-    temp += 1;
-    temp %= values.length;
-    setValue(temp);
-  }, []);
-  return [values[value], setToggle];
+    setValue(value + 1);
+  }, [value]);
+  return [values[value % values.length], setToggle];
 };
 
 export default useToggle;
