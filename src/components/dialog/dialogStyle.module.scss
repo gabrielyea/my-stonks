@@ -3,7 +3,7 @@
 .dialog {
   p {
     font-size: 0.8em;
-    border: $mainColor4 solid 2px;
+    border: var(--darkText) solid 2px;
     border-radius: 16px;
     padding: 1em;
   }
