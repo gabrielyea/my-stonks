@@ -5,7 +5,7 @@ const themes = {
     mainColor3: '#ce4176',
     mainColor4: '#992e58',
     mainText: 'white',
-    darkText: '#2d4573',
+    darkText: '#992e58',
   },
   blue: {
     mainColor1: '#5687e3',
