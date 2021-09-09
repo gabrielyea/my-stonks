@@ -10,7 +10,11 @@
 ![img](./misc/screenshot.png)
 ## Live Demo
 You can see my page live here: 
-- [Check it out!](https://stonks-time.netlify.app/)
+[Check it out!](https://stonks-time.netlify.app/)
+
+## Preview
+
+![img](./misc/loader-test.gif)
 
 
 ## Built With 🔨
@@ -47,4 +51,4 @@ Contributions, issues, and feature requests are welcome!
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-- This project was made following [Nelson Sakwa design!](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)).
+This project was made following [Nelson Sakwa design!](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)).
