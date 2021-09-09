@@ -31,7 +31,8 @@ const ballVariants = {
     borderRadius: ['50%%', '50%'],
     x: 75,
     transition: {
-      flip: Infinity,
+      repeat: Infinity,
+      repeatType: 'reverse',
       duration: 1,
       ease: 'easeInOut',
     },
