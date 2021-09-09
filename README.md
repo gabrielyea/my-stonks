@@ -15,6 +15,7 @@ You can see my page live here:
 ## Preview
 
 ![img](./misc/loader-test.gif)
+![img](./misc/themeChange.gif)
 
 
 ## Built With 🔨
