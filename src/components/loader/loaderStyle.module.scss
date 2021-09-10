@@ -1,0 +1,25 @@
+@use '../../utils/utils' as *;
+
+.mainContainer {
+  @include setFont();
+
+  position: absolute;
+  display: flex;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 5;
+
+  .ball {
+    height: 50px;
+    background: #e8961b;
+    width: 50px;
+    border-radius: 50%;
+  }
+}

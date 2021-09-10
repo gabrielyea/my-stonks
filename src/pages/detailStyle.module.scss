@@ -1,0 +1,64 @@
+@use '../utils/utils' as * ;
+
+.mainContainer {
+  header {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 16rem;
+
+    h2 {
+      font-size: 4rem;
+      color: $mainColor4;
+    }
+
+    .textContent {
+      justify-self: end;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      padding-right: 1rem;
+
+      h3 {
+        justify-content: end;
+        align-items: flex-end;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .sectionTitle {
+    @include setFont(1rem, bold);
+
+    display: flex;
+    flex-direction: row;
+    padding: 0 1em;
+    background-color: var(--mainColor2);
+
+    p {
+      color: var(--mainText);
+    }
+  }
+}
+
+ul {
+  li:nth-child(odd) {
+    background-color: var(--mainColor2);
+  }
+
+  li:nth-child(even) {
+    background-color: var(--mainColor3);
+  }
+}
+
+.dataSet {
+  @include setFont();
+
+  color: var(--mainText);
+  display: grid;
+  grid-template-columns: 5fr 4fr 1fr;
+  height: 5rem;
+  align-content: center;
+  padding: 1em;
+}

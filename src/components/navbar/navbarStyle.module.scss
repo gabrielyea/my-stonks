@@ -1,0 +1,28 @@
+@use '../../utils/utils' as *;
+
+.mainContainer {
+  @include setFont();
+
+  color: var(--mainText);
+  background-color: var(--mainColor2);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  height: 50px;
+
+  .contentHolder {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 0 1em;
+  }
+
+  .icon {
+    color: var(--mainText);
+    display: flex;
+  }
+}

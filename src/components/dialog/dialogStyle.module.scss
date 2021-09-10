@@ -1,0 +1,10 @@
+@use '../../utils/utils' as *;
+
+.dialog {
+  p {
+    font-size: 0.8em;
+    border: var(--darkText) solid 2px;
+    border-radius: 16px;
+    padding: 1em;
+  }
+}
