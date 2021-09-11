@@ -1,4 +1,4 @@
-@use '../utils/utils' as * ;
+@use '../utils/utils'as *;
 
 .mainContainer {
   header {
@@ -61,4 +61,79 @@ ul {
   height: 5rem;
   align-content: center;
   padding: 1em;
+}
+
+.chart {
+  width: 300px;
+}
+
+@include desktopResolution() {
+  .mainContainer {
+    header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      height: 22rem;
+
+      .textContent {
+        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 0 5em;
+
+        h3 {
+          justify-content: end;
+          align-items: flex-end;
+          font-size: 5rem;
+        }
+      }
+    }
+
+    .sectionTitle {
+      @include setFont(5rem, bold);
+
+      display: flex;
+      flex-direction: row;
+      padding: 0 1rem;
+      background-color: var(--mainColor2);
+      margin-bottom: 1rem;
+
+      p {
+        font-size: 2rem;
+        color: var(--mainText);
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    li:nth-child(odd) {
+      background-color: var(--mainColor2);
+    }
+
+    li:nth-child(even) {
+      background-color: var(--mainColor3);
+    }
+  }
+
+  .dataSet {
+    @include setFont(2rem, normal, italic);
+
+    color: var(--mainText);
+    display: grid;
+    grid-template-columns: 5fr 4fr 1fr;
+    height: 5rem;
+    align-content: center;
+    padding: 1em;
+  }
+
+  .chart {
+    margin: 2rem;
+    min-width: 600px;
+  }
 }

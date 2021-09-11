@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 1rem;
 
   button {
     border: none;
@@ -18,7 +19,7 @@
 }
 
 .menuContainer {
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   top: 50px;
   right: 0;
@@ -42,6 +43,35 @@
       width: 50%;
       height: 25%;
       border-radius: 4px;
+      transition: scale ease-in 0.1s;
+      scale: 1;
+
+      &:hover {
+        transition: scale ease-in 0.1s;
+        scale: 1.1;
+      }
     }
   }
+}
+
+@include desktopResolution() {
+  .optionsContainer {
+    font-size: 3rem;
+
+    .icon {
+      width: 4em;
+      height: 4em;
+    }
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vmax;
+  height: 100vmax;
+  z-index: 1;
+  pointer-events: all;
 }
