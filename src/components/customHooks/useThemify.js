@@ -1,8 +1,8 @@
 import { useCallback, useState } from 'react';
+import themes from './themes';
 
-const useThemify = (name, collection) => {
-  const themes = collection;
-  const [theme, setTheme] = useState(name);
+const useThemify = () => {
+  const [theme, setTheme] = useState();
 
   const applyTheme = useCallback((themeName) => {
     setTheme(themeName);
