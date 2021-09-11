@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { motion } from 'framer-motion';
-import themes from '../../utils/themes';
 import useThemify from '../customHooks/useThemify';
 import styles from './optionsStyle.module.scss';
 
@@ -47,48 +46,69 @@ const children = {
   },
 };
 
+const overlayVariant = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+  },
+  exit: {
+    opacity: 0,
+  },
+};
+
 const MenuOptions = ({ toggleMenu }) => {
-  const [theme, setTheme] = useThemify('pink', themes);
+  const [theme, setTheme] = useThemify();
 
   return (
-    <motion.div
-      className={styles.menuContainer}
-      variants={container}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-    >
-      <motion.ul
-        variants={parent}
+    <>
+      <motion.div
+        variants={overlayVariant}
         initial="initial"
         animate="animate"
         exit="exit"
-        style={theme === 'pink' ? { border: 'solid 4px #5687e3' } : { border: 'solid 4px #f94e90' }}
+        className={styles.overlay}
+      />
+      <motion.div
+        className={styles.menuContainer}
+        variants={container}
+        initial="initial"
+        animate="animate"
+        exit="exit"
       >
-        <motion.li
-          key="pink"
-          variants={children}
-          style={{ backgroundColor: '#f94e90' }}
-          onClick={() => {
-            setTheme('pink');
-            toggleMenu();
-          }}
+        <motion.ul
+          variants={parent}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          style={theme === 'pink' ? { border: 'solid 4px #5687e3' } : { border: 'solid 4px #f94e90' }}
         >
-          pink
-        </motion.li>
-        <motion.li
-          key="blue"
-          variants={children}
-          style={{ backgroundColor: '#5687e3' }}
-          onClick={() => {
-            setTheme('blue');
-            toggleMenu();
-          }}
-        >
-          blue
-        </motion.li>
-      </motion.ul>
-    </motion.div>
+          <motion.li
+            key="pink"
+            variants={children}
+            style={{ backgroundColor: '#f94e90' }}
+            onClick={() => {
+              setTheme('pink');
+              toggleMenu();
+            }}
+          >
+            pink
+          </motion.li>
+          <motion.li
+            key="blue"
+            variants={children}
+            style={{ backgroundColor: '#5687e3' }}
+            onClick={() => {
+              setTheme('blue');
+              toggleMenu();
+            }}
+          >
+            blue
+          </motion.li>
+        </motion.ul>
+      </motion.div>
+    </>
   );
 };
 export default MenuOptions;

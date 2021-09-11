@@ -8,3 +8,11 @@
     padding: 1em;
   }
 }
+
+@include desktopResolution() {
+  .dialog {
+    p {
+      font-size: 2em;
+    }
+  }
+}

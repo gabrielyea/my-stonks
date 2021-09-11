@@ -1,4 +1,4 @@
-@use '../../utils/utils' as *;
+@use '../../utils/utils'as *;
 
 .mainContainer {
   @include setFont();
@@ -15,5 +15,26 @@
 
   li:nth-child(even) {
     background-color: var(--mainColor3);
+  }
+}
+
+@include desktopResolution() {
+  .mainContainer {
+    @include setFont();
+
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(5, 20rem);
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+
+    li:nth-child(odd) {
+      background-color: var(--mainColor2);
+    }
+
+    li:nth-child(even) {
+      background-color: var(--mainColor3);
+    }
   }
 }
