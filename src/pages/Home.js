@@ -51,6 +51,8 @@ const Home = () => {
           >
             <motion.div
               layout
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
             >
               <Logo
                 className={styles.icon}

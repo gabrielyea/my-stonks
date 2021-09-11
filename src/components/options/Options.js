@@ -31,6 +31,7 @@ const Options = ({ filter, setFilter }) => {
       >
         <motion.button
           type="button"
+          whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.8 }}
           onClick={() => set(10)}
         >
@@ -38,6 +39,7 @@ const Options = ({ filter, setFilter }) => {
         </motion.button>
         <motion.button
           type="button"
+          whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.8 }}
           onClick={() => set(-10)}
         >

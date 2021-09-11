@@ -1,4 +1,4 @@
-@use '../utils/utils' as *;
+@use '../utils/utils'as *;
 
 header {
   @include setFont();
@@ -41,5 +41,52 @@ header {
 
   p {
     color: var(--mainText);
+  }
+}
+
+@include desktopResolution() {
+  header {
+    @include setFont();
+
+    color: var(--mainText);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    justify-items: center;
+    background-color: var(--mainColor1);
+    height: 18rem;
+
+    .icon {
+      width: 12em;
+      height: 12em;
+      fill: var(--darkText);
+    }
+  }
+
+  .doggoContainer {
+    display: flex;
+  }
+
+  .titleContainer {
+    display: flex;
+    align-items: center;
+
+    h1 {
+      font-size: 4rem;
+    }
+  }
+
+  .sectionTitle {
+    @include setFont(2rem, bold);
+
+    display: flex;
+    flex-direction: row;
+    padding: 0 1em;
+    background-color: var(--mainColor2);
+    margin-bottom: 0.5em;
+
+    p {
+      color: var(--mainText);
+    }
   }
 }

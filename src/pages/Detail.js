@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Chart from '../components/chart/Chart';
 import styles from './detailStyle.module.scss';
 
@@ -59,6 +59,9 @@ const Detail = ({ data }) => {
     (point) => <DataSet key={point} data={point} />,
   );
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <motion.div
       key={data.id}
@@ -73,8 +76,9 @@ const Detail = ({ data }) => {
         initial="initial"
         animate="animate"
       >
-        <Chart id={data.id} />
-
+        <motion.div className={styles.chart}>
+          <Chart id={data.id} />
+        </motion.div>
         <motion.div variants={child2} initial="initial" animate="animate" className={styles.textContent}>
           <motion.h3 variants={child2}>{data.name}</motion.h3>
           <motion.p variants={child2}>
