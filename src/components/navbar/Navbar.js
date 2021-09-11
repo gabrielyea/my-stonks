@@ -29,7 +29,6 @@ const Navbar = () => {
         <NavLink to={links[0].path}>
           <IoIosArrowBack className={style.icon} />
         </NavLink>
-        <p>2021</p>
       </div>
 
       <p style={{ alignSelf: 'center' }}>Crypto Coins</p>
@@ -38,6 +37,8 @@ const Navbar = () => {
       >
         <HiMicrophone />
         <motion.div
+          style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+          whileHover={{ scale: 2 }}
           whileTap={{ rotateZ: 360 }}
         >
           <HiCog onClick={() => toggleOpen()} />
