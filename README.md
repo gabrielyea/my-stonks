@@ -7,15 +7,15 @@
 > This applications lets you keep track of your favorite crypto currencies.
 
 ## Screenshots
-![img](./misc/screenshot.png)
+![img](https://raw.githubusercontent.com/gabrielyea/my-stonks/fa551cc7cf38a83c4c7341d61fa46c9cce69ae71/misc/screenshot.png)
 ## Live Demo
 You can see my page live here: 
 [Check it out!](https://stonks-time.netlify.app/)
 
 ## Preview
 
-![img](./misc/loader-test.gif)
-![img](./misc/themeChange.gif)
+![img](https://raw.githubusercontent.com/gabrielyea/my-stonks/fa551cc7cf38a83c4c7341d61fa46c9cce69ae71/misc/loader-test.gif)
+![img](https://raw.githubusercontent.com/gabrielyea/my-stonks/fa551cc7cf38a83c4c7341d61fa46c9cce69ae71/misc/themeChange.gif)
 
 
 ## Video
